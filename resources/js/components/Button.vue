@@ -3,7 +3,7 @@
         :class="['button-custom', variant]"
         :disabled="disabled"
     >
-        test
+        <slot/>
     </button>
 </template>
   
@@ -26,17 +26,24 @@
 
 <style>
 .primary{
-    @apply before:bg-[rgba(249,58,19,0.32)] after:bg-[linear-gradient(92.83deg,#ff7426_0,#f93a13_100%)];
+    @apply before:bg-[rgba(59,130,246,0.32)] after:bg-[linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)];
 }
 .primary:active:not(:disabled):after {
+    @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)] inset-1;
+}
+
+.warning {
+    @apply before:bg-[rgba(249,58,19,0.32)] after:bg-[linear-gradient(92.83deg,#ff7426_0,#f93a13_100%)];
+}
+.warning:active:not(:disabled):after {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#ff7426_0,#f93a13_100%)] inset-1;
 }
 
 .info {
-    @apply before:bg-[rgba(59,130,246,0.32)] after:bg-[linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)];
+    @apply before:bg-[rgba(250,204,21,0.32)] after:bg-[linear-gradient(92.83deg,#facc15_0,#eab308_100%)];
 }
 .info:active:not(:disabled):after  {
-    @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)] inset-1;
+    @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#facc15_0,#eab308_100%)] inset-1;
 }
 
 .danger {
