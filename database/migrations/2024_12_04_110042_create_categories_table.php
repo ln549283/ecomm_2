@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Nom de la catégorie
             $table->decimal('unlock_cost', 10, 2)->default(0); // Coût pour débloquer la catégorie
-            $table->boolean('is_unlocked')->default(false); // Statut de déblocage (défaut : verrouillé)
             $table->softDeletes();
             $table->timestamps();
         });

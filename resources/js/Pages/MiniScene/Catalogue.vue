@@ -7,11 +7,6 @@
                 <h3 class="text-xl font-medium text-gray-900 dark:text-white">
                     Catalogue de produit
                 </h3>
-                <!-- <Button variant="red" class="text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                    </svg>
-                </Button> -->
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
@@ -23,15 +18,19 @@
                                 :key="product.id"
                                 class="text-nowrap max-w-sm p-6 bg-white border border-gray-200 rounded-lg mx-auto shadow dark:bg-gray-800 dark:border-gray-700"
                             >
-                                <MugCustom class="mx-auto mb-2" width="100" height="100"/>
-                                <p >{{ product.name }}</p>
-                                <p>Prix d'achat : {{ product.base_purchase_price }} €</p>
-                                <p>Rang : {{ product.rank }}</p>
-                                                               
+                                <div class="inline-block align-middle me-5">
+                                    <MugCustom class="mx-auto mb-2" width="100" height="100"/>
+                                    <p >{{ product.name }}</p>
+                                    <p>Prix d'achat : {{ product.base_purchase_price }} €</p>
+                                    <p>Rang : {{ product.rank }}</p>
+                                </div>
+                                <div class="inline-block">
+                                    <p>Débloquer</p>
+                                    <LockIcon width="45" height="45" class="mx-auto"/>
+                                    <CoinIcon width="30" height="30" class="mx-auto"/> 
+                                </div>
+                                                                                               
                             </div>
-                            <!-- <p>Voici le contenu spécifique pour {{ category.name }}</p>
-                            <p>Coût de déblocage : {{ category.unlock_cost }} €</p>
-                            <p>Débloqué : {{ category.is_unlocked ? 'Oui' : 'Non' }}</p> -->
                         </div>
                     </template>
                 </Tabs>
@@ -45,6 +44,9 @@
     import MugCustom from '@/components/icons/MugCustom.vue';
     import Shirt from '@/components/icons/Shirt.vue';
     import Button from '@/components/Button.vue';
+    import LockIcon from '@/components/icons/Lock.vue';
+    import CoinIcon from '@/components/icons/Coin.vue';
+
     const props = defineProps({
         categories: {
             type: Array,

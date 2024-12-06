@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('media_unlocks', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // Nom ou pseudo du joueur
+            $table->decimal('balance', 15, 2)->default(0); // Solde actuel du joueur
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media_unlocks');
+        Schema::dropIfExists('players');
     }
 };
