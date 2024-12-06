@@ -45,6 +45,23 @@ class ProductSeeder extends Seeder
             ['name' => 'Laptop milieu de gamme', 'description' => 'Ordinateur portable performant.', 'category_id' => 4, 'rank' => 'rare', 'base_purchase_price' => 500, 'base_selling_price' => 800, 'stock' => 20, 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Écran 4K', 'description' => 'Écran haute résolution.', 'category_id' => 4, 'rank' => 'rare', 'base_purchase_price' => 700, 'base_selling_price' => 1200, 'stock' => 20, 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'PC Gaming', 'description' => 'PC hautes performances pour les gamers.', 'category_id' => 4, 'rank' => 'legendary', 'base_purchase_price' => 1000, 'base_selling_price' => 3000, 'stock' => 5, 'created_at' => now(), 'updated_at' => now()],
+        
+            // Categorie 5 : Produit de luxe
+            ['name' => 'Montre classique en or', 'description' => 'Une montre simple mais élégante en or.', 'category_id' => 5, 'rank' => 'common', 'base_purchase_price' => 5000, 'base_selling_price' => 9000, 'stock' => 30, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Sac en cuir de marque', 'description' => 'Sac en cuir de qualité supérieure.', 'category_id' => 5, 'rank' => 'common', 'base_purchase_price' => 7000, 'base_selling_price' => 12000, 'stock' => 30, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Pendentif en diamant', 'description' => "Pendentif élégant orné d’un diamant.", 'category_id' => 5, 'rank' => 'common', 'base_purchase_price' => 8000, 'base_selling_price' => 15000, 'stock' => 20, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Chaussures édition limitée', 'description' => 'Chaussures exclusives produites en série limitée.', 'category_id' => 5, 'rank' => 'rare', 'base_purchase_price' => 20000, 'base_selling_price' => 40000, 'stock' => 10, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Stylo en platine', 'description' => 'Stylo personnalisé en platine.', 'category_id' => 5, 'rank' => 'rare', 'base_purchase_price' => 25000, 'base_selling_price' => 50000, 'stock' => 10, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Collier en diamant', 'description' => 'Collier orné de diamants sertis à la main.', 'category_id' => 5, 'rank' => 'legendary', 'base_purchase_price' => 100000, 'base_selling_price' => 250000, 'stock' => 3, 'created_at' => now(), 'updated_at' => now()],
+
+            // Catégorie 6 : Voiture
+            ['name' => 'Voiture compacte économique', 'description' => 'Petite voiture fiable et économique.', 'category_id' => 6, 'rank' => 'common', 'base_purchase_price' => 10000, 'base_selling_price' => 18000, 'stock' => 20, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Voiture familiale standard', 'description' => 'Parfaite pour les familles avec un budget modéré.', 'category_id' => 6, 'rank' => 'common', 'base_purchase_price' => 15000, 'base_selling_price' => 25000, 'stock' => 20, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'SUV polyvalent', 'description' => 'Un SUV pratique et spacieux.', 'category_id' => 6, 'rank' => 'common', 'base_purchase_price' => 20000, 'base_selling_price' => 35000, 'stock' => 15, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Voiture sportive premium', 'description' => 'Une voiture rapide pour les amateurs de sensations fortes.', 'category_id' => 6, 'rank' => 'rare', 'base_purchase_price' => 50000, 'base_selling_price' => 90000, 'stock' => 8, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Berline de luxe', 'description' => 'Une berline élégante avec des finitions haut de gamme.', 'category_id' => 6, 'rank' => 'rare', 'base_purchase_price' => 80000, 'base_selling_price' => 140000, 'stock' => 5, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Voiture de collection vintage', 'description' => 'Un modèle de collection unique.', 'category_id' => 6, 'rank' => 'legendary', 'base_purchase_price' => 300000, 'base_selling_price' => 700000, 'stock' => 2, 'created_at' => now(), 'updated_at' => now()],
+
         ]);
     }
 }

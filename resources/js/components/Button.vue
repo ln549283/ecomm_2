@@ -1,9 +1,10 @@
 <template>
     <button
-        :class="['button-custom', variant]"
+        
         :disabled="disabled"
     >
-        <slot/>
+        <div :class="['button-custom', variant]"><slot/></div>
+        
     </button>
 </template>
   
@@ -14,7 +15,7 @@
     const props = defineProps({
         variant: {
             type: String,
-            default: 'primary', // primary, secondary, danger, etc.
+            default: 'blue', // primary, secondary, danger, etc.
         },
         disabled: {
             type: Boolean,
@@ -25,39 +26,49 @@
 </script>
 
 <style>
-.primary{
+.blue{
     @apply before:bg-[rgba(59,130,246,0.32)] after:bg-[linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)];
 }
-.primary:active:not(:disabled):after {
+.blue:active:not(:disabled):after {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)] inset-1;
 }
 
-.warning {
+.orange {
     @apply before:bg-[rgba(249,58,19,0.32)] after:bg-[linear-gradient(92.83deg,#ff7426_0,#f93a13_100%)];
 }
-.warning:active:not(:disabled):after {
+.orange:active:not(:disabled):after {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#ff7426_0,#f93a13_100%)] inset-1;
 }
 
-.info {
+.yellow {
     @apply before:bg-[rgba(250,204,21,0.32)] after:bg-[linear-gradient(92.83deg,#facc15_0,#eab308_100%)];
 }
-.info:active:not(:disabled):after  {
+.yellow:active:not(:disabled):after  {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#facc15_0,#eab308_100%)] inset-1;
 }
 
-.danger {
+.red {
     @apply before:bg-[rgba(239,68,68,0.32)] after:bg-[linear-gradient(92.83deg,#ef4444_0,#b91c1c_100%)];
 }
-.danger:active:not(:disabled):after  {
+.red:active:not(:disabled):after  {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#ef4444_0,#b91c1c_100%)] inset-1;
 }
 
-.success {
+.green {
     @apply before:bg-[rgba(34,197,94,0.32)] after:bg-[linear-gradient(92.83deg,#22c55e_0,#15803d_100%)];
 }
-.success:active:not(:disabled):after  {
+.green:active:not(:disabled):after  {
     @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#22c55e_0,#15803d_100%)] inset-1;
+}
+.purple {
+    @apply before:bg-[rgba(139,92,246,0.32)] after:bg-[linear-gradient(92.83deg,#8b5cf6_0,#6d28d9_100%)];
+}
+.purple:active:not(:disabled):after {
+    @apply bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(92.83deg,#8b5cf6_0,#6d28d9_100%)] inset-1;
+}
+
+.close-btn {
+    @apply absolute top-0 right-0;
 }
 
 .button-custom {
@@ -66,6 +77,7 @@
     outline: none;
     -webkit-user-select: none;
 }
+
 .button-custom:before,
 .button-custom:after {
     @apply rounded-[80px];
