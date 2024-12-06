@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, watch } from 'vue';
-
+import Button from '@/components/Button.vue';
+import Close from './icons/Close.vue';
 const props = defineProps({
     show: {
         type: Boolean,
@@ -8,7 +9,7 @@ const props = defineProps({
     },
     maxWidth: {
         type: String,
-        default: '2xl',
+        default: '7xl',
     },
     closeable: {
         type: Boolean,
@@ -55,6 +56,8 @@ const maxWidthClass = computed(() => {
         lg: 'sm:max-w-lg',
         xl: 'sm:max-w-xl',
         '2xl': 'sm:max-w-2xl',
+        '4xl': 'sm:max-w-4xl',
+        '7xl': 'sm:max-w-7xl',
     }[props.maxWidth];
 });
 </script>
@@ -62,7 +65,7 @@ const maxWidthClass = computed(() => {
 <template>
     <Teleport to="body">
         <Transition leave-active-class="duration-200">
-            <div v-show="show" class="fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50" scroll-region>
+            <div v-show="show" class="fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50 " scroll-region>
                 <Transition
                     enter-active-class="ease-out duration-300"
                     enter-from-class="opacity-0"
@@ -86,9 +89,13 @@ const maxWidthClass = computed(() => {
                 >
                     <div
                         v-show="show"
-                        class="mb-6 bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto"
+                        class=" mb-6 bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto"
                         :class="maxWidthClass"
                     >
+                        <Button variant="red" class="absolute top-2 right-14 h-4 w-10 z-50" @click="close">
+                            <Close width="25" height="25" color="red" fill="rgba(0,0,0,0)"/>
+                        </Button>
+
                         <slot v-if="show" />
                     </div>
                 </Transition>
