@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player_category', function (Blueprint $table) {
+        Schema::create('player_categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('player_id')->constrained()->onDelete('cascade'); // Référence au joueur
             $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Référence à la catégorie
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_category');
+        Schema::dropIfExists('player_categories');
     }
 };
