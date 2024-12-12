@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .button-size-sm {
+        @apply md:px-6 md:py-[10px];
+    }
+    
+    .button-size-md {
+        @apply md:px-7 md:py-[15px];
+    }
+    
+    .button-size-lg {
+        @apply md:px-8 md:py-[19px];
+    }
+}

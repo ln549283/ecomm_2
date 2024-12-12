@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductPrice;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
-class ProductPriceController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ProductPriceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ProductPrice $productPrice)
+    public function show(Player $player)
     {
         //
     }
@@ -42,7 +42,7 @@ class ProductPriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ProductPrice $productPrice)
+    public function edit(Player $player)
     {
         //
     }
@@ -50,7 +50,7 @@ class ProductPriceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProductPrice $productPrice)
+    public function update(Request $request, Player $player)
     {
         //
     }
@@ -58,7 +58,7 @@ class ProductPriceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProductPrice $productPrice)
+    public function destroy(Player $player)
     {
         //
     }

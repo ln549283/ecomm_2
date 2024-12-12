@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('name'); // Nom du produit
             $table->text('description')->nullable(); // Description du produit
             $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Clé étrangère vers categories
+            $table->decimal('unlock_price', 10, 2); // Coût pour débloquer le produit
             $table->decimal('base_purchase_price', 10, 2); // Prix d'achat de base
-            $table->decimal('base_selling_price', 10, 2); // Prix de revente de base
+            $table->decimal('ideal_selling_price', 10, 2); // Prix de revente de base
             $table->integer('stock')->default(0); // Quantité en stock
-            $table->enum('rank', ['common', 'rare', 'legendary'])->default('common');
+            $table->enum('rank', ['common', 'rare', 'legendary']);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_prices', function (Blueprint $table) {
+        Schema::create('player_categories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('player_id')->constrained()->onDelete('cascade'); // Référence au joueur
+            $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Référence à la catégorie
+            $table->timestamp('unlocked_at')->nullable(); // Date de déblocage
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_prices');
+        Schema::dropIfExists('player_categories');
     }
 };

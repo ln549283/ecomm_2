@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Player;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,8 +14,7 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'unlock_cost',
-        'is_unlocked',
+        'unlock_cost'
     ];
 
     protected $dates = ['deleted_at'];
@@ -24,14 +24,21 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function isUnlocked(): bool
+    public function players()
     {
-        return $this->is_unlocked;
+        return $this->belongsToMany(Player::class, 'player_categories')
+                    ->withPivot('unlocked_at')
+                    ->withTimestamps();
     }
 
     public function unlock(): void
     {
         $this->is_unlocked = true;
         $this->save();
+    }
+
+    public function events()
+    {
+        return $this->morphMany(Event::class, 'target');
     }
 }
