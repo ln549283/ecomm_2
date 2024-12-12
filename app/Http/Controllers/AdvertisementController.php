@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MediaCampaign;
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
-class MediaCampaignController extends Controller
+class AdvertisementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class MediaCampaignController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MediaCampaign $mediaCampaign)
+    public function show(Advertisement $advertisement)
     {
         //
     }
@@ -42,7 +42,7 @@ class MediaCampaignController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MediaCampaign $mediaCampaign)
+    public function edit(Advertisement $advertisement)
     {
         //
     }
@@ -50,7 +50,7 @@ class MediaCampaignController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, MediaCampaign $mediaCampaign)
+    public function update(Request $request, Advertisement $advertisement)
     {
         //
     }
@@ -58,7 +58,7 @@ class MediaCampaignController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(MediaCampaign $mediaCampaign)
+    public function destroy(Advertisement $advertisement)
     {
         //
     }

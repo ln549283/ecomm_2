@@ -1,10 +1,10 @@
 <template>
     <button
-        
         :disabled="disabled"
     >
-        <div :class="['button-custom', variant]"><slot/></div>
-        
+        <div :class="['button-custom', variant, size]">
+            <slot/>
+        </div>
     </button>
 </template>
   
@@ -21,11 +21,26 @@
             type: Boolean,
             default: false, // Si le bouton est désactivé
         },
+        size: {
+            type: String,
+            default : 'lg',
+        }
     });
-  
+
 </script>
 
 <style>
+.sm {
+    @apply px-[2px] py-[1px] md:px-6 md:py-[10px];
+}
+
+.md {
+    @apply px-[2px] py-[1px] md:px-7 md:py-[15px];
+}
+
+.lg {
+    @apply px-[2px] py-[1px] md:px-8 md:py-[19px];
+}
 .blue{
     @apply before:bg-[rgba(59,130,246,0.32)] after:bg-[linear-gradient(92.83deg,#3b82f6_0,#2563eb_100%)];
 }
@@ -72,11 +87,12 @@
 }
 
 .button-custom {
-    @apply items-center appearance-none bg-clip-padding bg-[initial] bg-none box-border text-white cursor-pointer inline-block flex-row shrink-0 text-base font-extrabold justify-center leading-6 min-h-[64px] overflow-visible pointer-events-auto relative text-center no-underline normal-case select-none touch-manipulation align-middle w-auto break-keep z-0 m-0 px-[26px] py-[19px] border-none md:px-8 md:py-[19px]  before:content-[""] before:block before:h-full before:overflow-hidden before:absolute before:w-full before:z-[-2] before:left-0 before:top-0 after:bg-[initial]  after:content-[""] after:block after:overflow-hidden after:absolute after:transition-all after:duration-100 after:ease-[ease-out] after:z-[-1] after:inset-1 disabled:cursor-default disabled:opacity-[0.24];
+    @apply items-center appearance-none bg-clip-padding bg-[initial] bg-none box-border text-white cursor-pointer inline-block flex-row shrink-0 text-base font-extrabold justify-center leading-4 min-h-[4px] overflow-visible pointer-events-auto relative text-center no-underline normal-case select-none touch-manipulation align-middle w-auto break-keep z-0 m-0  border-none before:content-[""] before:block before:h-full before:overflow-hidden before:absolute before:w-full before:z-[-2] before:left-0 before:top-0 after:bg-[initial]  after:content-[""] after:block after:overflow-hidden after:absolute after:transition-all after:duration-100 after:ease-[ease-out] after:z-[-1] after:inset-1 disabled:cursor-default disabled:opacity-[0.24];
     font-family: Eina01, sans-serif;
     outline: none;
     -webkit-user-select: none;
 }
+
 
 .button-custom:before,
 .button-custom:after {
