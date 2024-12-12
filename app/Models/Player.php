@@ -9,6 +9,10 @@ class Player extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'balance' => 'float', // Assure que balance est un float
+    ];
+    
     protected $fillable = [
         'name',
         'balance',
